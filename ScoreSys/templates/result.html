@@ -1,0 +1,56 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>index</title>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>We have found the following locations for you</h1>
+        <p>
+            please comment the recommended spot
+        </p>
+
+    </div>
+    <div class="row jumbotron">
+        <form action="{% url "result" %}" class="form-row" method="post">
+            {% for place in final_lis %}
+
+
+                <div class="card ml-5" style="width: 18rem;">
+                    <img class="card-img-top" src="{{MEDIA_URL}}{{ place.image }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ place.place_name }}</h5>
+                        <p class="card-text">introduction {{ place.introduction }} </p>
+                        <p class="card-text">current scores : {{ place.score }}</p>
+                        <p class="card-text">number of comments :{{ place.score_people_num }}</p>
+                        <input type="text" placeholder="please comment the recommended spot(1-5)"
+                               name="data--{{ place.category }}--{{ place.id }}">
+                    </div>
+                </div>
+
+            {% endfor %}
+            <div class="row col-3 mx-5 mt-3 align-items-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            {% csrf_token %}
+        </form>
+
+    </div>
+
+</div>
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

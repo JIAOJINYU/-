@@ -1,0 +1,75 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>index</title>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>お台場へようこそ.</h1>
+        <p>
+            please choose the tags
+        </p>
+
+    </div>
+    <div class="jumbotron media-body align-content-center align-items-center">
+        <div class="accordion" id="accordionExample">
+            {% for category,values in final_dict.items %}
+
+
+                <div class="card">
+                    <div class="card-header" id="heading-{{ forloop.counter }}">
+
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collaspe-{{ forloop.counter }}"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                <i class="fal fa-truck-monster "></i>
+                                {{ category }}
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collaspe-{{ forloop.counter }}" class="collapse"
+                         data-parent="#accordionExample">
+                        <div class="card-body ml-5">
+                            <form action="{% url "index" %}" class="form-row" method="post">
+                                {% for val in values %}
+                                    <div class="col-md-6">
+                                        <span class="font-weight-bold pr-1">{{ val }}</span>
+                                        <input type="checkbox" class="custom-checkbox" value="{{ val }}"
+                                               name="check_box_list">
+
+
+                                    </div>
+                                {% endfor %}
+
+                                <input type="text" name="category" value="{{ category }}" hidden>
+                                <div class="col-md-6">
+                                    <button type="submit" class="btn btn-primary">submit</button>
+                                </div>
+                                {% csrf_token %}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>
