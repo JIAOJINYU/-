@@ -1,3 +1,8 @@
 #　おだいば観光アシスタント
 based on Django。Recommendation system based on user tags
 Match locations with users by creating attractions tags in the database
+these are the data I have collected from 食べログand 4travel.
+the ローカルでウェブサイトを開く方法については、Djangoのマニュアルを参照してください。
+![data for visit](https://github.com/JIAOJINYU/-/blob/master/1.png)
+![data for shopping](https://github.com/JIAOJINYU/-/blob/master/2.png)
+![data for food](https://github.com/JIAOJINYU/-/blob/master/3.png)
