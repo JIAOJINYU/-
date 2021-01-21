@@ -6,3 +6,4 @@ the ローカルでウェブサイトを開く方法については、Djangoの�
 ![data for visit](https://github.com/JIAOJINYU/-/blob/master/1.png)
 ![data for shopping](https://github.com/JIAOJINYU/-/blob/master/2.png)
 ![data for food](https://github.com/JIAOJINYU/-/blob/master/3.png)
+![data for food](https://github.com/JIAOJINYU/-/blob/master/6.png)
