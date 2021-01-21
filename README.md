@@ -7,3 +7,4 @@ the ローカルでウェブサイトを開く方法については、Djangoの�
 ![data for shopping](https://github.com/JIAOJINYU/-/blob/master/2.png)
 ![data for food](https://github.com/JIAOJINYU/-/blob/master/3.png)
 ![data for food](https://github.com/JIAOJINYU/-/blob/master/6.png)
+you can visit the website"http://47.254.243.95/index/" to check the system!
