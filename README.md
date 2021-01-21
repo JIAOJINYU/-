@@ -1,4 +1,4 @@
-#　おだいば観光アシスタント
+#　おだいば観光アシスタントpls visit"http://47.254.243.95/index/"
 based on Django。Recommendation system based on user tags
 Match locations with users by creating attractions tags in the database
 these are the data I have collected from 食べログand 4travel.
